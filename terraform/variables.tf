@@ -1,0 +1,22 @@
+variable "project_id" {
+  description = "GCP project ID"
+  type        = string
+}
+
+variable "region" {
+  description = "GCP region"
+  type        = string
+  default     = "us-central1"
+}
+
+variable "gke_cluster_name" {
+  description = "Name of the GKE cluster"
+  type        = string
+  default     = "flask-app-cluster"
+}
+
+variable "network_name" {
+  description = "VPC network name"
+  type        = string
+  default     = "flask-app-network"
+}
