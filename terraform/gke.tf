@@ -1,9 +1,3 @@
-provider "google" {
-  project = var.project_id
-  region  = var.region    
-  zone    = "europe-west1-b"    
-}
-
 resource "google_container_cluster" "primary" {
   name     = "flask-app-cluster"
   location = "europe-west1-b"  
