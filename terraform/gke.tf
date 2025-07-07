@@ -12,22 +12,16 @@ resource "google_container_cluster" "primary" {
 }
 
 resource "google_container_node_pool" "primary_nodes" {
-  name       = "primary-node-pool"
+  name       = "primary-nodes"
   cluster    = google_container_cluster.primary.name
-  location   = var.region
-  node_count = 1
+  location   = google_container_cluster.primary.location
+
+  node_count = 3
 
   node_config {
     machine_type = "e2-micro"
-    oauth_scopes = [
-      "https://www.googleapis.com/auth/cloud-platform",
-    ]
-    workload_metadata_config {
-      mode = "GKE_METADATA"
-    }
-    disk_type = "pd-standard"        
+    disk_type    = "pd-ssd"        
     disk_size_gb = 30              
+    image_type   = "COS_CONTAINERD"
   }
-
-  depends_on = [google_container_cluster.primary]
 }
