@@ -51,4 +51,4 @@ jobs:
             --create-namespace \
             --set image.repository=$DOCKER_REGISTRY/$DOCKER_USER/$IMAGE_NAME \
             --set image.tag=$GITHUB_SHA \
-            -f ./helm/my-app/values-${{ env.ENVIRONMENT }}.yaml
+            -f ./helm/flask-app/values-${{ env.ENVIRONMENT }}.yaml
