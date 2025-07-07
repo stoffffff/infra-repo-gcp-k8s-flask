@@ -6,8 +6,5 @@ resource "google_container_cluster" "primary" {
 
   network    = google_compute_network.vpc_network.name
   subnetwork = google_compute_subnetwork.staging_subnet.name
-
-  workload_identity_config {
-    workload_pool = "${var.project_id}.svc.id.goog"
-  }
+  
 }
