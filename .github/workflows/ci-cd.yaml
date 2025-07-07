@@ -13,7 +13,7 @@ jobs:
       IMAGE_NAME: flask-app
       DOCKER_REGISTRY: docker.io
       DOCKER_USER: ${{ secrets.DOCKERHUB_USERNAME }}
-      ENVIRONMENT: staging
+      ENVIRONMENT: production
 
     steps:
       - name: Checkout code
