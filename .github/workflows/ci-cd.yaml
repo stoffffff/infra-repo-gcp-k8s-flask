@@ -46,7 +46,7 @@ jobs:
 
       - name: Deploy via Helm
         run: |
-          helm upgrade --install flask-app ./helm/my-app \
+          helm upgrade --install flask-app ./helm/flask-app \
             --namespace $ENVIRONMENT \
             --create-namespace \
             --set image.repository=$DOCKER_REGISTRY/$DOCKER_USER/$IMAGE_NAME \
