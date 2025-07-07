@@ -41,8 +41,8 @@ jobs:
       - name: Configure kubectl
         uses: google-github-actions/get-gke-credentials@v2
         with:
-          cluster_name: your-cluster-name
-          location: your-cluster-region
+          cluster_name: flask-app-cluster
+          location: europe-west1-b
 
       - name: Deploy via Helm
         run: |
